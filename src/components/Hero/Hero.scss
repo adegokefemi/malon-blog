@@ -1,0 +1,9 @@
+.Hero {
+    height: 80vh;
+    background-image: linear-gradient(to left, rgba(133, 134, 139, 0.52), rgba(25, 3, 23, 0.73)), url("../../../public/images/blog-banner-min.jpg");
+    background-size: cover;
+    color: #ffffff;
+    p {
+        font-size: 1.2rem;
+    }
+}
