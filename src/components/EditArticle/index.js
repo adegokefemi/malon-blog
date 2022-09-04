@@ -16,7 +16,20 @@ const EditArticle = ({ show, handleClose, data }) => {
 
     const onSaveClicked = () => {
         // check form validation here;
+       if(data === '') {
+        return;
+       }
         // you can call api here after form validation;
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify(article),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                })
+                .then((response) => response.json())
+                .then((json) => console.log(json,));
+
         handleClose(article, !!data);
     }
 
@@ -50,7 +63,7 @@ const EditArticle = ({ show, handleClose, data }) => {
                 Close
             </Button>
             <Button variant="warning" onClick={onSaveClicked}>
-                Save Changes
+                Edit Article
             </Button>
             </Modal.Footer>
         </Modal>

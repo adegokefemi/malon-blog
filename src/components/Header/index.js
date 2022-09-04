@@ -3,7 +3,7 @@ import { Button, Container, Navbar } from "react-bootstrap";
 
 const Header = ({ openModal }) => {
     return (
-        <header>
+        <header position="fixed">
             <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">Malon Blog Dashboard</Navbar.Brand>

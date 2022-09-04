@@ -35,6 +35,16 @@ const Content = ({ modalOpened, closeModal, openModal }) => {
         openModal();
     }
 
+    const onDeleteClicked = (id) => {
+        fetch(`${baseUrl}/posts/${id}`, { method: "DELETE" })
+        .then(res => res.json())
+        .then(() => {
+            console.log("Deleted!")
+            setArticles((prevArticles) => prevArticles.filter(a => a.id !== id));
+        });
+        
+    }
+
 
     return (
         <Container className="d-flex flex-column pt-4 pb-5">
@@ -48,7 +58,8 @@ const Content = ({ modalOpened, closeModal, openModal }) => {
                             key={article.id} 
                             poster={images[index % 5]} 
                             article={article}
-                            onEditClicked={onEditClicked} />
+                            onEditClicked={onEditClicked}
+                            onDeleteClicked={onDeleteClicked} />
                     ))
                 }
                 
