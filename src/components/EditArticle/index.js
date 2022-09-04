@@ -15,11 +15,10 @@ const EditArticle = ({ show, handleClose, data }) => {
     };
 
     const onSaveClicked = () => {
-        // check form validation here;
        if(data === '') {
         return;
        }
-        // you can call api here after form validation;
+
         fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify(article),
