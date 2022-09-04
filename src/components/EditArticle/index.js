@@ -63,7 +63,7 @@ const EditArticle = ({ show, handleClose, data }) => {
                 Close
             </Button>
             <Button variant="warning" onClick={onSaveClicked}>
-                Save Changes
+                Edit changes
             </Button>
             </Modal.Footer>
         </Modal>
